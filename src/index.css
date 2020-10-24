@@ -1,13 +1,117 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: antiquewhite;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 20px 0 0 !important;
+}
+
+.search-bar,
+.dropdown-holder {
+  border-bottom: 1px solid #476562;
+  width: auto;
+}
+
+.nav-right img {
+  padding: 15px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding-bottom: 10px;
+}
+
+p {
+  font-family: Avenir, sans-serif;
+}
+
+.carousel-indicators {
+  left: 60% !important;
+}
+
+.carousel-indicators li {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.carousel-custom-caption {
+  background-color: #476562;
+  height: 100%;
+  text-align: left;
+  color: antiquewhite;
+}
+
+.carousel-custom-caption h1 {
+  font-family: Coneria Script Demo;
+  padding: 50px 20px 20px 20px;
+  text-transform: capitalize;
+  font-size: 4vw;
+}
+
+.carousel-custom-caption p {
+  text-align: left;
+  padding: 20px;
+  font-size: 1.5vw;
+  white-space: pre-line;
+}
+
+.btn1 {
+  border: none;
+  background-color: transparent;
+  margin-top: 20px;
+}
+
+.btn1 a {
+  color: antiquewhite;
+  text-decoration: none;
+  font-size: 1.5vw;
+}
+
+.btn1 a:hover {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.dropdown-holder {
+  display: inline;
+  outline: none;
+  padding-bottom: 10px;
+
+}
+
+.dropdown-holder button:focus {
+  outline: none;
+  visibility: hidden;
+}
+
+.img-fluid {
+  position: relative;
+}
+
+.outofstock {
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+  background-color: dimgrey;
+  font-size: 12px;
+  padding: 10px;
+  color: aliceblue;
 }
