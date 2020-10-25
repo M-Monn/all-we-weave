@@ -15,7 +15,7 @@ const products = [
   },
   {
     _id: "aww0000000002",
-    image: require("../img/aww-retangle-table.jpg"),
+    image: require("../img/aww-rounded-table.jpg"),
     title: "Rounded Table With Storage",
     category: {
       _id: "awwc0000000001",
@@ -27,7 +27,7 @@ const products = [
   },
   {
     _id: "aww0000000003",
-    image: require("../img/aww-retangle-table.jpg"),
+    image: require("../img/aww-armed-chair.jpg"),
     title: "Armed Chair",
     category: {
       _id: "awwc0000000002",
@@ -39,32 +39,8 @@ const products = [
   },
   {
     _id: "aww0000000004",
-    image: require("../img/aww-retangle-table.jpg"),
-    title: "Standing Lamp",
-    category: {
-      _id: "awwc0000000003",
-      name: "Lamp",
-    },
-    dimension: "30x40x120 cm",
-    price: 89,
-    numberInStock: 5,
-  },
-  {
-    _id: "aww0000000005",
-    image: require("../img/aww-retangle-table.jpg"),
-    title: "Table Lamp",
-    category: {
-      _id: "awwc0000000003",
-      name: "Lamp",
-    },
-    dimension: "30x40x120 cm",
-    price: 89,
-    numberInStock: 5,
-  },
-  {
-    _id: "aww0000000006",
-    image: require("../img/aww-retangle-table.jpg"),
-    title: "Rounded Table",
+    image: require("../img/aww-rounded-basket-table.jpg"),
+    title: "Rounded Basket Table",
     category: {
       _id: "awwc0000000001",
       name: "Table",
@@ -74,8 +50,32 @@ const products = [
     numberInStock: 5,
   },
   {
+    _id: "aww0000000005",
+    image: require("../img/aww-planter-basket.jpg"),
+    title: "Planter Basket",
+    category: {
+      _id: "awwc0000000005",
+      name: "Planter",
+    },
+    dimension: "30x40x120 cm",
+    price: 89,
+    numberInStock: 5,
+  },
+  {
+    _id: "aww0000000006",
+    image: require("../img/aww-swinger-chair.jpg"),
+    title: "Singer Chair",
+    category: {
+      _id: "awwc0000000002",
+      name: "Chair",
+    },
+    dimension: "30x40x120 cm",
+    price: 89,
+    numberInStock: 5,
+  },
+  {
     _id: "aww0000000007",
-    image: require("../img/aww-retangle-table.jpg"),
+    image: require("../img/aww-table-lamp.jpg"),
     title: "Table Lamp",
     category: {
       _id: "awwc0000000003",
@@ -99,11 +99,11 @@ const products = [
   },
   {
     _id: "aww0000000009",
-    image: require("../img/aww-retangle-table.jpg"),
-    title: "Table Lamp",
+    image: require("../img/aww-coffee-table.jpg"),
+    title: "Coffee Table",
     category: {
-      _id: "awwc0000000003",
-      name: "Lamp",
+      _id: "awwc0000000001",
+      name: "Table",
     },
     dimension: "30x40x120 cm",
     price: 89,
@@ -111,8 +111,8 @@ const products = [
   },
   {
     _id: "aww0000000010",
-    image: require("../img/aww-retangle-table.jpg"),
-    title: "Table Lamp",
+    image: require("../img/aww-laundary-basket.jpg"),
+    title: "Laundary Basket",
     category: {
       _id: "awwc0000000003",
       name: "Lamp",
@@ -224,6 +224,18 @@ const products = [
     category: {
       _id: "awwc0000000003",
       name: "Lamp",
+    },
+    dimension: "30x40x120 cm",
+    price: 89,
+    numberInStock: 5,
+  },
+  {
+    _id: "aww0000000020",
+    image: require("../img/aww-retangle-table.jpg"),
+    title: "Cabinet",
+    category: {
+      _id: "awwc0000000004",
+      name: "Cabinet",
     },
     dimension: "30x40x120 cm",
     price: 89,

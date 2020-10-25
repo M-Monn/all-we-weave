@@ -4,42 +4,35 @@ const CategoryList = ({
   items = [],
   textProperty,
   valueProperty,
+  onSelectItem,
   selectedItem,
-  onItemSelect,
 }) => {
   return (
-    <div className="row mb-5 mt-4">
-      <div className="col-md-10 text-left">
-        Filtered by:
-        <div className="dropdown-holder ml-3">
-          <button
-            class="btn dropdown-toggle p-0"
-            type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
+    <div className="dropdown-holder ml-3">
+      <button
+        className="btn dropdown-toggle p-0"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Category
+      </button>
+      <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        {items.map((item) => (
+          <a
+            onClick={() => {
+              onSelectItem(item);
+            }}
+            className={
+              item === selectedItem ? "dropdown-item active" : "dropdown-item"
+            }
+            key={item[valueProperty]}
           >
-            Category
-          </button>
-          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            {items.map((item) => (
-              <a
-                onClick={() => {
-                  onItemSelect(item);
-                }}
-                className={
-                  item === selectedItem
-                    ? "dropdown-item active"
-                    : "dropdown-item"
-                }
-                key={items[valueProperty]}
-              >
-                {item[textProperty]}
-              </a>
-            ))}
-          </div>
-        </div>
+            {item[textProperty]}
+          </a>
+        ))}
       </div>
     </div>
   );
