@@ -1,19 +1,28 @@
 import React from "react";
 import _ from "lodash";
 
-const LoadMore = (props) => {
-  const { itemsCount, loadToShow, onLoadMore } = props;
+const Pagination = (props) => {
+  const { itemsCount, pageSize, currentPage, onPageChange } = props;
+  console.log(currentPage);
+  const pagesCount = Math.ceil(itemsCount / pageSize);
+  if (pagesCount === 1) return null;
+  const pages = _.range(1, pagesCount + 1);
   return (
-    <button
-      type="button"
-      className="btn btn-outline-primary mb-5"
-      onClick={() => {
-        onLoadMore();
-      }}
-    >
-      LoadMore
-    </button>
+    <nav>
+      <ul className="pagination justify-content-center">
+        {pages.map((page) => (
+          <li
+            key={page}
+            className={page === currentPage ? "page-item active" : "page-item"}
+          >
+            <a className="page-link" onClick={() => onPageChange(page)}>
+              {page}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 
-export default LoadMore;
+export default Pagination;

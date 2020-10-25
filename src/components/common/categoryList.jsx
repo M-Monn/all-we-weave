@@ -25,14 +25,15 @@ const CategoryList = ({
           <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
             {items.map((item) => (
               <a
-                onClick={() => onItemSelect(item)}
+                onClick={() => {
+                  onItemSelect(item);
+                }}
                 className={
                   item === selectedItem
                     ? "dropdown-item active"
                     : "dropdown-item"
                 }
                 key={items[valueProperty]}
-                href="#"
               >
                 {item[textProperty]}
               </a>

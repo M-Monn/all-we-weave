@@ -1,22 +1,18 @@
 import React, { Component } from "react";
-import LoadMore from "./common/pagination";
 import { getProducts } from "../products/weaveProducts";
 import { getCategories } from "../products/productCategories";
 import CategoryList from "./common/categoryList";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  NavLink,
-} from "react-router-dom";
+import LoadMore from "./loadMore";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Pagination from "./common/pagination";
+import { paginate } from "./utils/paginate";
 
 class Products extends Component {
   state = {
     products: [],
     categories: [],
-    currentLoad: 1,
-    loadToShow: 12,
+    currentPage: 1,
+    pageSize: 12,
   };
 
   componentDidMount() {
@@ -28,15 +24,20 @@ class Products extends Component {
     this.setState({ selectedCategory: category });
   };
 
-  handleLoadMore = (load) => {
-    console.log(load);
+  handlePageChange = (page) => {
+    this.setState({ currentPage: page });
   };
 
   render() {
     // object destructure
     const { length: count } = this.state.products;
+    const { pageSize, currentPage, products: allProducts } = this.state;
+
     // check if there is a product in the database
     if (count === 0) return <p>There is not product in the database</p>;
+
+    const products = paginate(allProducts, currentPage, pageSize);
+
     return (
       <div className="container-fluid mt-4 overflow-auto mr-0 ml-0">
         {/* Breadcrumb */}
@@ -59,7 +60,7 @@ class Products extends Component {
 
         {/* Product Display */}
         <div className="row">
-          {this.state.products.map((product) => (
+          {products.map((product) => (
             <div className="col-md-3 text-left mb-5">
               <div className="img-fluid">
                 {product.numberInStock === 0 ? (
@@ -75,11 +76,12 @@ class Products extends Component {
             </div>
           ))}
         </div>
-        {/* load more */}
-        <LoadMore
+
+        <Pagination
           itemsCount={count}
-          loadToShow={this.state.loadToShow}
-          onLoadMore={this.handleLoadMore}
+          pageSize={pageSize}
+          currentPage={currentPage}
+          onPageChange={this.handlePageChange}
         />
       </div>
     );
